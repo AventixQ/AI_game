@@ -1,0 +1,38 @@
+/* static/css/style.css */
+html,body {
+  margin:0;
+  padding:0;
+  height:100%;
+  overflow:hidden;
+  background: linear-gradient(#87CEEB, #ffffff);
+  font-family: Arial, Helvetica, sans-serif;
+}
+#game-container {
+  width: 100vw;
+  height: 100vh;
+}
+#cam-overlay {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  width: 220px;
+  z-index: 9999;
+  background: rgba(0,0,0,0.35);
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  backdrop-filter: blur(4px);
+}
+#webcam {
+  display: block;
+  width: 200px;
+  height: 150px;
+  border-radius: 6px;
+  border: 2px solid rgba(255,255,255,0.15);
+  background: black;
+}
+#probabilities {
+  margin-top:6px;
+  font-size: 14px;
+}
+#probabilities div { margin: 3px 0; }

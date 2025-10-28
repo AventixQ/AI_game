@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dino Hand Game</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+  <div id="cam-overlay">
+    <canvas id="webcam-canvas" width="200" height="150"></canvas>
+    <div id="probabilities">
+      <div>Open hand: <span id="prob-open">0.00</span></div>
+      <div>Closed hand: <span id="prob-closed">0.00</span></div>
+    </div>
+  </div>
+  <div id="game-container"></div>
+
+  <script>
+    const MODEL_BASE_URL = "https://teachablemachine.withgoogle.com/models/NO59me_1M/";
+    const MODEL_JSON = MODEL_BASE_URL + "model.json";
+    const METADATA_JSON = MODEL_BASE_URL + "metadata.json";
+  </script>
+  <script src="/static/js/tm_loader.js"></script>
+  <script src="/static/js/game.js"></script>
+</body>
+</html>
