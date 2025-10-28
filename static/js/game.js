@@ -18,7 +18,7 @@ class StartScene extends Phaser.Scene {
     }
 
     this.add.text(this.scale.width / 2, this.scale.height / 2,
-      "🖐️ Otwórz dłoń, aby rozpocząć grę",
+      "Otwórz dłoń, aby rozpocząć grę 🖐️",
       { fontSize: '36px', color: '#ffffff', fontStyle: 'bold', fontFamily: 'sans-serif' })
       .setOrigin(0.5);
 
@@ -130,9 +130,9 @@ class GameScene extends Phaser.Scene {
   }
 
   increaseDifficulty() {
-    this.speed += 50;
+    this.speed += 60;
     this.spawnMin = Math.max(1200, this.spawnMin - 100);
-    this.spawnMax = Math.max(1600, this.spawnMax - 100);
+    this.spawnMax = Math.max(1300, this.spawnMax - 100);
 
     this.obstacles.children.iterate(obstacle => {
       if (obstacle) {
@@ -142,7 +142,7 @@ class GameScene extends Phaser.Scene {
 
     let msg = this.add.text(this.scale.width / 2, this.scale.height / 3,
       'SPEED UP!',
-      { fontSize: '40px', color: '#ff0000', fontStyle: 'bold', fontFamily: 'sans-serif' })
+      { fontSize: '40px', color: '#9b2424ff', fontStyle: 'bold', fontFamily: 'sans-serif' })
       .setOrigin(0.5);
 
     this.time.delayedCall(1000, () => msg.destroy());
@@ -155,7 +155,7 @@ class GameScene extends Phaser.Scene {
     }
 
     this.add.text(this.scale.width / 2, this.scale.height / 2,
-      '💀 Koniec gry!\nOtwórz dłoń, by zagrać ponownie',
+      'Koniec gry!\nOtwórz dłoń, by zagrać ponownie 💀',
       { fontSize: '28px', color: '#fff', align: 'center', fontFamily: 'sans-serif' })
       .setOrigin(0.5);
 
